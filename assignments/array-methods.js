@@ -107,8 +107,39 @@ console.log(ticketPriceTotal);
 // ==== Challenge 5: Be Creative ====
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
+
 // Problem 1
+//The event director wants a list of all the runner's last names in alphabetical order.
+
+let lastnameAlphabetical = [];
+
+lastnameAlphabetical = runners.map(function(currentValue) {
+    return currentValue.last_name
+});
+
+console.log(lastnameAlphabetical.sort()); 
+
 
 // Problem 2
+// A Cold Snap hits because the event director forgot it was January. Now he needs a list of all the runner's names and emails so he can tell them the marathon is cancelled! 
+
+let nameEmail = [];
+
+runners.forEach(function(currentValue){
+    nameEmail.push(`${currentValue.first_name}, ${currentValue.last_name}, ${currentValue.email}`);
+});
+
+console.log(nameEmail);
+//Now the event director needs that list we created in problem2 in alphabetical order because he is unorganized.
+console.log(nameEmail.sort());
+
 
 // Problem 3
+//Now the event director realizes his assistant forgot to order the small-sized shirts. Get a list of runners that ordered the small shirts so that they can be re-ordered.
+let smallShirts = [];
+
+smallShirts = runners.filter(function(currentValue){
+    return currentValue.shirt_size === 'S'
+});
+
+console.log(smallShirts);

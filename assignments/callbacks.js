@@ -96,10 +96,29 @@ contains(item, list, function(trueorfalse){
   console.log(trueorfalse)
 });
 
+
+
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
+  
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const newArray = array.filter(function(item, index) {
+    if (array.indexOf(item) !== index) {
+      return false;
+    }else if (array.indexOf(item) === index) {
+      return true;
+    }
+
+  });
+  cb(newArray);
 }
+
+const cb = function(element) {
+  console.log(element);
+}
+
+console.log(removeDuplicates(items, cb));
+
